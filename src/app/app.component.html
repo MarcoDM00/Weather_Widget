@@ -1,10 +1,19 @@
-<div>
-  <img [src]="">
+<div id="container" [ngClass]="weather.isDay ? 'giorno' : 'notte' ">
 
-  <h1>Temperatura</h1>
-  <p>Min / Max</p>
-  <p>Temperatura percepita: </p>
-  <br>
-  <h1>Città</h1>
-  <p>Umidità</p>
+  <div *ngIf="weather.isDay" class="riga">
+      <img class="sun" src="../assets/sun.png" >
+  </div>   
+  <div *ngIf="!weather.isDay" class="riga">
+      <img class="moon" src="../assets/moon.png">
+  </div>
+
+  <div class="riga" style="font-size: 37px;margin-top: 5px;">{{weather.temp_celcius}}°</div>
+  <div class="riga" style="font-size: 17px;">{{weather.temp_min}}° / {{weather.temp_max}}°</div>
+  <div class="riga" style="font-size: 17px;">Feels Like: {{weather.temp_feels_like}}°</div>
+  <div class="riga" style="font-size: 30px;margin-top: 10px;">{{weather.name}}</div>
+  <div class="riga" style="font-size: 17px;">Humidity: {{weather.main.humidity}}%</div>
 </div>
+
+<br>
+
+<button (click)="weather.isDay = !weather.isDay">Toggle Day</button>

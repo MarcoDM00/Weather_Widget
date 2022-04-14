@@ -1,10 +1,31 @@
-div {
+#container {
     width: 240px;
     height: 260px;
     border-radius: 10px;
     background-color: blue;
 }
 
-div * {
-    
+.riga {
+    display: block;
+    margin: auto;
+    width: fit-content;
+}
+
+img {
+    width: 60px;
+    margin-top: 30px;
+}
+
+.giorno {
+    background: rgb(0,42,148);
+    background: linear-gradient(174deg, rgba(0,42,148,1) 23%, rgba(121,143,200,1) 85%);
+}
+
+.notte {
+    background: rgb(0,0,0);
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(8,7,42,1) 75%, rgb(8, 10, 63) 100%);
+}
+
+.notte * {
+    color: white;
 }
